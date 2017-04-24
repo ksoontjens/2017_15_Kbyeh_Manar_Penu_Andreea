@@ -1,38 +1,29 @@
 package hellotvxlet;
 
-import javax.tv.xlet.Xlet;
-import javax.tv.xlet.XletContext;
-import javax.tv.xlet.XletStateChangeException;
-import org.havi.ui.HScene;
-import org.havi.ui.HSceneFactory;
+import javax.tv.xlet.*;
 
 
-public class HelloTVXlet implements Xlet{
+public class HelloTVXlet implements Xlet {
 
-    HScene scene;
-    
-    public void destroyXlet(boolean unconditional) throws XletStateChangeException {
+  
+    public HelloTVXlet() {
         
     }
 
-    public void initXlet(XletContext ctx) throws XletStateChangeException {
-        scene = HSceneFactory.getInstance().getDefaultHScene();
-        
-        MijnComponent mc = new MijnComponent(100,100,200,300);
-        MijnComponent mc2 = new MijnComponent(400,100,200,300);
-        scene.add(mc);
-        
-        scene.add(mc2);
-        scene.validate();
-        scene.setVisible(true);
+    public void initXlet(XletContext context) {
+      
+     
+    }
+
+    public void startXlet() {
+    
     }
 
     public void pauseXlet() {
-        
+     
     }
 
-    public void startXlet() throws XletStateChangeException {
-        
+    public void destroyXlet(boolean unconditional) {
+     
     }
-
 }
