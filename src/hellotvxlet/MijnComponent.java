@@ -18,7 +18,7 @@ import org.havi.ui.HComponent;
  */
 public class MijnComponent extends HComponent{
     
-    int br, ho;
+    int br, ho,test;
 
     public MijnComponent(int a, int b, int c, int d)
     {
