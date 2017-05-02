@@ -1,14 +1,35 @@
 Signature-Version: 1.0
 Created-By: 1.6.0_16 (Sun Microsystems Inc.)
 BDJ-Signature-Version: 1.0
-SHA1-Digest-Manifest: WFSNWt9eNvXgMNCEpKfDf6Aqnzg=
+SHA1-Digest-Manifest: WYel2rSH4yywnI/+nZZDRwMm+60=
 
 Name: hellotvxlet/HelloTVXlet.class
-SHA1-Digest: k3+sSqcNMlfrslaBGw0Hum9kbmo=
+SHA1-Digest: gJowQ554LghEyLEgxBdq4/WegAU=
 
 Name: hellotvxlet/HelloTVXlet$1.class
 SHA1-Digest: jL4rl+dtvgbj4VErj8qjkXfGCe4=
 
+Name: hellotvxlet/Rechthoek.class
+SHA1-Digest: ufmhk1hVrnYhmBsSsyG3kGr+BbE=
+
+Name: hellotvxlet/timer.class
+SHA1-Digest: ixWOZppAit47j0PSs2jWpjUMmbQ=
+
+Name: hellotvxlet/MijnComponent.class
+SHA1-Digest: mkD+xo4j0OqUasz6Bl0Udd4C+KY=
+
 Name: hellotvxlet/bluray.HelloTVXlet.perm
 SHA1-Digest: 84ZO/rYCyy0JStmaLbg1GDVEFhQ=
+
+Name: hellotvxlet/Spel.class
+SHA1-Digest: nLlHrz7jh6liVWdjiFJxGfnx3wE=
+
+Name: hellotvxlet/manager.class
+SHA1-Digest: aqBHs5ynQgUBtrNH4Y96eH9qbRc=
+
+Name: hellotvxlet/boll.class
+SHA1-Digest: 7pmGnDOaXbreYwA6wtrJQ//zBx8=
+
+Name: hellotvxlet/delen.class
+SHA1-Digest: I0aeIrdbQAek15X8VsclCf8kGoQ=
 
