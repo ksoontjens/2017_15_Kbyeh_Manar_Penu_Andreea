@@ -8,9 +8,13 @@ import org.dvb.event.UserEventListener;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import javax.tv.xlet.Xlet;
 import javax.tv.xlet.XletContext;
 import javax.tv.xlet.XletStateChangeException;
+import org.bluray.ui.event.HRcEvent;
+import org.dvb.event.EventManager;
+import org.dvb.event.UserEventRepository;
 import org.dvb.ui.DVBColor;
 import org.havi.ui.HContainer;
 import org.havi.ui.HScene;
@@ -41,6 +45,8 @@ public class HelloTVXlet implements Xlet, UserEventListener, HActionListener{
    public HSceneTemplate sceneTemplate;
    
    private HStaticText scoreLbl;
+    private int x,y;
+    public int gedrukt = 0;
    
    
  
@@ -83,9 +89,46 @@ public class HelloTVXlet implements Xlet, UserEventListener, HActionListener{
         scene.validate();
         scene.setVisible(true);
         
+        //manager
+        EventManager manager = EventManager.getInstance();
+        //repository
+        UserEventRepository repository = new UserEventRepository("Voorbeeld");
+        
+        //events toevoegen
+        repository.addKey(org.havi.ui.event.HRcEvent.VK_UP);
+        repository.addKey(org.havi.ui.event.HRcEvent.VK_DOWN);
+        repository.addKey(org.havi.ui.event.HRcEvent.VK_LEFT);
+        repository.addKey(org.havi.ui.event.HRcEvent.VK_RIGHT);
+        
+        //bekend maken bij manager
+        manager.addUserEventListener(this, repository);
+        
 
     }
 
+    
+    public void callback(){
+              switch(gedrukt){
+                case 3:
+                      //rechts
+                      x += 20;
+                      break;
+                case 1://onder
+                      y += 20;
+                      break;
+                case 2: //links
+                      x -= 20;
+                      break;
+                case 0: //boven
+                      y -= 20;
+                      break;
+                default:
+                      break;        
+            }
+    
+              scene.repaint();
+    
+    }
     public void pauseXlet() {
         
     }
@@ -94,15 +137,36 @@ public class HelloTVXlet implements Xlet, UserEventListener, HActionListener{
        
     }
 
-    public void userEventReceived(UserEvent e) {
-        
-    
-    }
+   
 
     public void actionPerformed(ActionEvent e) {
       
       
     }
+    
+    //opvangen van key events
+    public void userEventReceived(org.dvb.event.UserEvent e){
+        if(e.getType() == KeyEvent.KEY_PRESSED){
+            switch(e.getCode()){
+            
+                case HRcEvent.VK_UP:
+                    gedrukt = 0;
+                    System.out.println("VK_UP is PRESSED");
+                    break;
+                case HRcEvent.VK_DOWN:
+                    gedrukt = 1;
+                    System.out.println("VK_DOWN is PRESSED");
+                    break;
+                case HRcEvent.VK_LEFT:
+                    gedrukt = 2;
+                    System.out.println("VK_LEFT is PRESSED");
+                    break;
+                case HRcEvent.VK_RIGHT:
+                    gedrukt = 3;
+                    System.out.println("VK_RIGHT is PRESSED");
+                    break;
+            
+            }}}
     
     
      public void tekenSpeelveld(){
