@@ -14,11 +14,11 @@ import org.havi.ui.HComponent;
  * @author student
  */
 public class Bol extends HComponent {
-    public int x = 200;
-    public int y = 200;
+    public int x = 300;
+    public int y = 300;
     
     public Bol(){
-        this.setBounds(0, 0, 510, 400);
+        this.setBounds(0, 0, 1000, 1000);
     }
     
     
