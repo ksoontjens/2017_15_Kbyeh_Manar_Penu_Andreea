@@ -36,6 +36,7 @@ public class HelloTVXlet implements Xlet, UserEventListener, HActionListener{
  
    public Speelveld veld;
    public Bol bol;
+   public Slang slang;
    
    public HSceneTemplate sceneTemplate;
    
@@ -73,6 +74,7 @@ public class HelloTVXlet implements Xlet, UserEventListener, HActionListener{
         
         tekenSpeelveld();
         tekenBol();
+        tekenSlang();
     }
 
     public void startXlet() throws XletStateChangeException {
@@ -113,5 +115,10 @@ public class HelloTVXlet implements Xlet, UserEventListener, HActionListener{
         scene.add(bol);
      }
      
+     
+      public void tekenSlang(){
+        slang = new Slang();
+        scene.add(slang);
+     }
     
 }

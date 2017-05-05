@@ -19,7 +19,7 @@ import org.dvb.ui.*;
 public class Speelveld extends HComponent {
    
 public Speelveld(){
-       this.setBounds(0, 0, 100, 100); //plaats en grootte instellen
+       //this.setBounds(0, 0, 1000, 1000); //plaats en grootte instellen
     }
    
     
