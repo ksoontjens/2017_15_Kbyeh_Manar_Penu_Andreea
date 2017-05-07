@@ -9,25 +9,26 @@ package hellotvxlet;
  *
  * @author student
  */
-public class manager {
+public class managergame {
 
-    static manager manger;
-    HelloTVXlet view;
+    static managergame ik;
+    HelloTVXlet ap;
     
-    public static manager getInstance()
+    public static managergame getInstance()
     {
-        if (manger==null) manger=new manager();
-        return manger;
+        if (ik==null) ik=new managergame();
+        return ik;
     }
     
     public HelloTVXlet getApplicationManager()
     {
-        return view;
+        return ap;
     }
     
     public void setApplicationManager(HelloTVXlet ap)
     {
-        this.view=ap;
+        this.ap=ap;
     }
     
 }
+
