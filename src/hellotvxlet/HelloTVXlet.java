@@ -5,6 +5,9 @@ import java.awt.event.ActionEvent;
 import javax.tv.xlet.Xlet;
 import javax.tv.xlet.XletContext;
 import javax.tv.xlet.XletStateChangeException;
+import org.dvb.event.EventManager;
+import org.dvb.event.UserEventListener;
+import org.dvb.event.UserEventRepository;
 import org.havi.ui.HContainer;
 import org.havi.ui.HScene;
 import org.havi.ui.HSceneFactory;
@@ -24,8 +27,7 @@ public class HelloTVXlet implements Xlet, HActionListener
     HContainer menu;
    HScene scene;
       public Speelveld veld;
-   public Bol bol;
-   public Slang slang;
+
 
    HTextButton start;
 
@@ -34,6 +36,10 @@ public class HelloTVXlet implements Xlet, HActionListener
  static int scoreNumber = 0;
  HStaticText highscore;
  HStaticText score;
+ private scherm spelscherm;
+ private int x,y;
+ public int gedrukt = 0;
+
 
  public void setTextbox(HStaticText highscoreInit){
   highscore = highscoreInit;  
@@ -73,10 +79,8 @@ public class HelloTVXlet implements Xlet, HActionListener
         
         text.setLocation(115,50);
 
-        
-        
-        
-        
+     
+
         start=new HTextButton("Start",50,150,200,100);
         start.setBordersEnabled(true);
         start.setLocation(265,300);
@@ -95,8 +99,7 @@ public class HelloTVXlet implements Xlet, HActionListener
         
         start.requestFocus();
              tekenSpeelveld();
-        tekenBol();
-        tekenSlang();
+  
     }
 
     public void pauseXlet() {
@@ -104,9 +107,50 @@ public class HelloTVXlet implements Xlet, HActionListener
     }
 
     public void startXlet() throws XletStateChangeException {
+        
+       
+        scene.validate();
+        scene.setVisible(true);
+        
+        //manager
+        EventManager manager = EventManager.getInstance();
+        //repository
+        UserEventRepository repository = new UserEventRepository("Voorbeeld");
+        
+        //events toevoegen
+        repository.addKey(org.havi.ui.event.HRcEvent.VK_UP);
+        repository.addKey(org.havi.ui.event.HRcEvent.VK_DOWN);
+        repository.addKey(org.havi.ui.event.HRcEvent.VK_LEFT);
+        repository.addKey(org.havi.ui.event.HRcEvent.VK_RIGHT);
+        
+        //bekend maken bij manager
+        manager.addUserEventListener((UserEventListener) this,repository);
+        
+
+    }
+     public void callback(){
+              switch(gedrukt){
+                case 3:
+                      //rechts
+                      x += 20;
+                      break;
+                case 1://onder
+                      y += 20;
+                      break;
+                case 2: //links
+                      x -= 20;
+                      break;
+                case 0: //boven
+                      y -= 20;
+                      break;
+                default:
+                      break;        
+            }
+    
+              scene.repaint();
     
     }
- 
+
     public void respawn() throws XletStateChangeException
     {
         System.out.println("Restart Xlet!!!");
@@ -144,15 +188,7 @@ public class HelloTVXlet implements Xlet, HActionListener
         scene.add(veld);
     }
      
-     public void tekenBol(){
-        bol = new Bol();
-        scene.add(bol);
-     }
+
      
-     
-      public void tekenSlang(){
-        slang = new Slang();
-        scene.add(slang);
-     }
-    
+  
 }

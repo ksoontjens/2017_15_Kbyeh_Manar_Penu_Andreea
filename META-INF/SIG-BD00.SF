@@ -1,7 +1,7 @@
 Signature-Version: 1.0
 Created-By: 1.6.0_16 (Sun Microsystems Inc.)
 BDJ-Signature-Version: 1.0
-SHA1-Digest-Manifest: DXKII6CTuvF8tImE55bguYguo9Q=
+SHA1-Digest-Manifest: ytzsBgWvFvdlzLY2AEw0nf2gjPM=
 
 Name: hellotvxlet/HelloTVXlet$1.class
 SHA1-Digest: jL4rl+dtvgbj4VErj8qjkXfGCe4=
@@ -24,23 +24,32 @@ SHA1-Digest: bge4s/7C85tgsL8OxJQycSSNl6s=
 Name: hellotvxlet/xy.class
 SHA1-Digest: bXAUXIP/9g311w7Cz/T1ZkMUmOU=
 
-Name: hellotvxlet/Speelveld.class
-SHA1-Digest: wm+7nvikpGmcilzQaj+2ZhnRZgs=
-
 Name: hellotvxlet/manager.class
 SHA1-Digest: aqBHs5ynQgUBtrNH4Y96eH9qbRc=
 
+Name: hellotvxlet/Speelveld.class
+SHA1-Digest: wm+7nvikpGmcilzQaj+2ZhnRZgs=
+
 Name: hellotvxlet/game.class
-SHA1-Digest: m6skmNIrrDjrsPbt/J6UJdjOxTA=
+SHA1-Digest: Og+lW3GCCer/Q2ljGSBbjPyADTY=
+
+Name: hellotvxlet/scherm.class
+SHA1-Digest: oBXRBioqJb+OKSOr441b8P4wsZw=
 
 Name: hellotvxlet/HelloTVXlet.class
-SHA1-Digest: IJ+AqfYPCfC4ykuAE910Ky6Kwp4=
+SHA1-Digest: CDWgYUmFxtuDPGtM69OIVuHk36g=
+
+Name: hellotvxlet/Blok.class
+SHA1-Digest: SARo3LoosA0SRi04sCN5OJm2JTw=
 
 Name: hellotvxlet/Bol.class
 SHA1-Digest: B7+Tiz75myEG1eDe4/o9JSfWcDs=
 
 Name: hellotvxlet/bluray.HelloTVXlet.perm
 SHA1-Digest: 84ZO/rYCyy0JStmaLbg1GDVEFhQ=
+
+Name: hellotvxlet/Segement.class
+SHA1-Digest: wANnjmNTalUDSkOCDG/cQO6FmkY=
 
 Name: hellotvxlet/Spel.class
 SHA1-Digest: HqknIUOUr3cT8pEscYF4PiyCX+4=
