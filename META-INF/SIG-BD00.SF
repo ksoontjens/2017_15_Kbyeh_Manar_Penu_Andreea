@@ -1,55 +1,40 @@
 Signature-Version: 1.0
 Created-By: 1.6.0_16 (Sun Microsystems Inc.)
 BDJ-Signature-Version: 1.0
-SHA1-Digest-Manifest: ytzsBgWvFvdlzLY2AEw0nf2gjPM=
+SHA1-Digest-Manifest: UtYm1XlDEB8c6rbf4BR6Kou5o6Y=
 
-Name: hellotvxlet/HelloTVXlet$1.class
-SHA1-Digest: jL4rl+dtvgbj4VErj8qjkXfGCe4=
-
-Name: hellotvxlet/Rechthoek.class
-SHA1-Digest: ufmhk1hVrnYhmBsSsyG3kGr+BbE=
+Name: src/hellotvxlet/scherm.class
+SHA1-Digest: oba6s0YA8Y5ph0SaBK9+2LwFPnY=
 
 Name: hellotvxlet/managergame.class
 SHA1-Digest: hDw+pGCZQ2PEDQ/NptxjrNjPAEc=
 
-Name: hellotvxlet/timer.class
-SHA1-Digest: ixWOZppAit47j0PSs2jWpjUMmbQ=
-
-Name: hellotvxlet/MijnComponent.class
-SHA1-Digest: mkD+xo4j0OqUasz6Bl0Udd4C+KY=
-
 Name: hellotvxlet/Slang.class
 SHA1-Digest: bge4s/7C85tgsL8OxJQycSSNl6s=
 
-Name: hellotvxlet/xy.class
-SHA1-Digest: bXAUXIP/9g311w7Cz/T1ZkMUmOU=
-
-Name: hellotvxlet/manager.class
-SHA1-Digest: aqBHs5ynQgUBtrNH4Y96eH9qbRc=
+Name: src/hellotvxlet/managergame.class
+SHA1-Digest: IBOWzlAfnE3VzK+jlmB8D6rLqN8=
 
 Name: hellotvxlet/Speelveld.class
-SHA1-Digest: wm+7nvikpGmcilzQaj+2ZhnRZgs=
-
-Name: hellotvxlet/game.class
-SHA1-Digest: Og+lW3GCCer/Q2ljGSBbjPyADTY=
-
-Name: hellotvxlet/scherm.class
-SHA1-Digest: oBXRBioqJb+OKSOr441b8P4wsZw=
+SHA1-Digest: IlwpSdvl51nbegXlW48mDbQ6Vd4=
 
 Name: hellotvxlet/HelloTVXlet.class
-SHA1-Digest: CDWgYUmFxtuDPGtM69OIVuHk36g=
+SHA1-Digest: j4c4ZIzzlBaQ7tM0RYK3KGXypnc=
 
 Name: hellotvxlet/Blok.class
 SHA1-Digest: SARo3LoosA0SRi04sCN5OJm2JTw=
 
-Name: hellotvxlet/Bol.class
-SHA1-Digest: B7+Tiz75myEG1eDe4/o9JSfWcDs=
-
 Name: hellotvxlet/bluray.HelloTVXlet.perm
-SHA1-Digest: 84ZO/rYCyy0JStmaLbg1GDVEFhQ=
+SHA1-Digest: Iz2EmX/hIvVXbO3PX0e6hezSY28=
+
+Name: src/hellotvxlet/bluray.HelloTVXlet.perm
+SHA1-Digest: GrfdvAT3B6TTk4tC3N/X8NIzJNc=
 
 Name: hellotvxlet/Segement.class
 SHA1-Digest: wANnjmNTalUDSkOCDG/cQO6FmkY=
+
+Name: src/hellotvxlet/Segement.class
+SHA1-Digest: 3fOY0hxYT5PEW4z3fIFVLZJnqOo=
 
 Name: hellotvxlet/Spel.class
 SHA1-Digest: HqknIUOUr3cT8pEscYF4PiyCX+4=
@@ -59,4 +44,52 @@ SHA1-Digest: I0aeIrdbQAek15X8VsclCf8kGoQ=
 
 Name: hellotvxlet/boll.class
 SHA1-Digest: 7pmGnDOaXbreYwA6wtrJQ//zBx8=
+
+Name: hellotvxlet/hoofdgame.class
+SHA1-Digest: Yi8qV5bjuw3ynM6BxeJwnwfXuOQ=
+
+Name: hellotvxlet/Rechthoek.class
+SHA1-Digest: ufmhk1hVrnYhmBsSsyG3kGr+BbE=
+
+Name: hellotvxlet/HelloTVXlet$1.class
+SHA1-Digest: jL4rl+dtvgbj4VErj8qjkXfGCe4=
+
+Name: src/hellotvxlet/Blok.class
+SHA1-Digest: ZyYUG/fNc/kxGwl/KnWY29Qs3Ek=
+
+Name: hellotvxlet/timer.class
+SHA1-Digest: ixWOZppAit47j0PSs2jWpjUMmbQ=
+
+Name: hellotvxlet/MijnComponent.class
+SHA1-Digest: mkD+xo4j0OqUasz6Bl0Udd4C+KY=
+
+Name: hellotvxlet/xy.class
+SHA1-Digest: bXAUXIP/9g311w7Cz/T1ZkMUmOU=
+
+Name: hellotvxlet/manager.class
+SHA1-Digest: aqBHs5ynQgUBtrNH4Y96eH9qbRc=
+
+Name: hellotvxlet/game.class
+SHA1-Digest: Mnp5OihYn+0m0Wgirk1feCS1dyw=
+
+Name: hellotvxlet/scherm.class
+SHA1-Digest: QCFD64/j4IG0Ga5noQ8xuXrDH2U=
+
+Name: src/hellotvxlet/Bol.class
+SHA1-Digest: Sl5X7W0ukALATghYGnsrAYLV8Gc=
+
+Name: src/hellotvxlet/HelloTVXlet.class
+SHA1-Digest: rGezehM307+Fv4/vHsPO/8yBf5Y=
+
+Name: hellotvxlet/Bol.class
+SHA1-Digest: B7+Tiz75myEG1eDe4/o9JSfWcDs=
+
+Name: src/hellotvxlet/Slang.class
+SHA1-Digest: K++yN/ageNzRj0fIpeQYAetyLMg=
+
+Name: src/hellotvxlet/game.class
+SHA1-Digest: 4tRpEbtk+iz39WGn1yd9J+05SGc=
+
+Name: hellotvxlet/tmrGame.class
+SHA1-Digest: KzKhOw982ROAAJu2QttshFcUGBc=
 

@@ -22,11 +22,11 @@ import org.havi.ui.event.HActionListener;
 public class HelloTVXlet implements Xlet, HActionListener
       
 {
- game gxlet;
+ hoofdgame gxlet;
  XletContext ctx;
     HContainer menu;
    HScene scene;
-      public Speelveld veld;
+     
 
 
    HTextButton start;
@@ -98,7 +98,7 @@ public class HelloTVXlet implements Xlet, HActionListener
         scene.setVisible(true);
         
         start.requestFocus();
-             tekenSpeelveld();
+            
   
     }
 
@@ -167,7 +167,7 @@ public class HelloTVXlet implements Xlet, HActionListener
         
                // start GameXlet
                this.ctx=ctx;
-           gxlet=new game();
+           gxlet=new hoofdgame();
            managergame.getInstance().setApplicationManager(this);
             try {
                 scene.setVisible(false);
@@ -183,10 +183,7 @@ public class HelloTVXlet implements Xlet, HActionListener
       }
 
     }
-         public void tekenSpeelveld(){
-        veld = new Speelveld();
-        scene.add(veld);
-    }
+  
      
 
      
