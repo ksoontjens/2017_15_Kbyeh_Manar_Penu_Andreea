@@ -99,6 +99,8 @@ public class HelloTVXlet implements Xlet, HActionListener, UserEventListener
         scene.setVisible(true);
         
         start.requestFocus();
+        
+       
             
   
     }

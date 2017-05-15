@@ -21,6 +21,8 @@ static HScene scene=null;
     int gedrukt=0;
     private Slang nextSlang;
     private int x=350,y=200;
+    private Bol bol;
+    
 
     int initx = 0;
     int inity = 140;
@@ -105,6 +107,10 @@ static HScene scene=null;
  speelveld = new scherm();       
         
            scene.add(speelveld);
+           
+         
+           
+           
           scene.validate();
         scene.setVisible(true);
         //init grid
@@ -128,6 +134,9 @@ static HScene scene=null;
         lblGrid[i].setForeground(new DVBColor(0,0,0,255));
         lblGrid[i].setFont(myfont);        
         scene.add(lblGrid[i]);
+        
+        
+        
         }
         
   
@@ -171,9 +180,18 @@ static HScene scene=null;
         t.scheduleAtFixedRate(mtt,0,timerinterval);
        
         
+        
+        tekenBol();
     }
       
     }
+    
+    
+    public void tekenBol(){
+        bol = new Bol();
+        scene.add(bol);
+    }
+    
     public void startXlet() 
     {
        
@@ -295,8 +313,10 @@ static HScene scene=null;
     }
             scene.repaint();
             System.out.println("new slang at "+x+","+y);
-    snake.add(nextSlang);
+            snake.add(nextSlang);
             
+    
+   
             
     }
     

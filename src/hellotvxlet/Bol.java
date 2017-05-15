@@ -23,7 +23,7 @@ public class Bol extends HComponent {
     
     
     public void paint(Graphics g){
-        g.setColor(Color.blue);
+        g.setColor(Color.yellow);
         g.fillOval(x, y, 20, 20);
            
     }
