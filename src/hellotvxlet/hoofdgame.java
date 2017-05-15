@@ -22,6 +22,7 @@ static HScene scene=null;
     private Slang nextSlang;
     private int x=350,y=200;
     private Bol bol;
+  
     
 
     int initx = 0;
@@ -32,7 +33,10 @@ static HScene scene=null;
      private scherm speelveld;
     int initsnakelength = 2;
     int snakelength = initsnakelength;
-     HStaticText highscore, score;
+    // HStaticText highscore, score;
+    int score = 0;
+    int highscore = 0;
+    
     int highscoreNumber = 0;
     int direction = 3;
    
@@ -46,7 +50,9 @@ static HScene scene=null;
     
     ArrayList snake=new ArrayList();
     //classes
-//    Segement[] snake;
+    
+    Segement[] snakeA;
+    
     Blok[] grid;
     Segement food;
 
@@ -303,7 +309,7 @@ static HScene scene=null;
                 
             nextSlang = new Slang(x,y);
             scene.add(nextSlang);
-                if (snake.size()>3)
+                if (snake.size()>snakelength)
     {
        scene.remove((Slang)snake.get(0));
        
@@ -311,28 +317,74 @@ static HScene scene=null;
         
        
     }
+            
+            
+            
             scene.repaint();
             System.out.println("new slang at "+x+","+y);
             snake.add(nextSlang);
             
     
-   
+            
+            
             overlapBol();
+            overlapZichzelf();
+            overlapVeld();
             
     }
       
-      
+   
       public void overlapBol(){
           System.out.println("slangX: " + x + " slangY: " + y);
           System.out.println("bolX: " + bol.x + " bolY: " + bol.y);
           
           if (Math.abs(x-bol.x)<20 && Math.abs(y-bol.y)<20) {
      
-            scene.remove(bol);
-            scene.repaint();
+            //laat bol verdwijnen
+              scene.remove(bol);
+            //lengte slang vermeerderen
+             snakelength++;
+              
+            //score aanpassen
+            score++;
+            lblPoints.setTextContent("score: " + Integer.toString(score),HVisible.NORMAL_STATE);
+            
+            scene.repaint(); //op random plek verschijnen
+            tekenBol();
           }
           
           
+      }
+      
+      
+      public void overlapZichzelf(){
+  
+        for (int i = 1; i < snakelength; i++)
+            {
+              // if ((Slang)snake.get(i).x == x && (Slang)snake.get(i).y == y){
+               
+                   // holdtimer=true;
+                    // System.out.println("GAME OVER ");
+             //  }   
+        }
+      }
+      
+      
+      public void overlapVeld(){
+        if (x >= 710 || x <= -10 || y >= 560 || y <= 120){
+        
+            
+            gameover();
+        }
+      }
+      
+      public void gameover(){
+        
+          
+            holdtimer=true;
+            System.out.println("GAME OVER UIT SPEL");
+            scene.setBackground(Color.BLACK);
+            
       }
     
     public void actionPerformed(ActionEvent e) 
