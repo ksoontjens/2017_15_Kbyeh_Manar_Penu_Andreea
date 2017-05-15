@@ -3,6 +3,7 @@ import java.util.TimerTask;
 
 public class tmrGame extends TimerTask {
     HelloTVXlet myXlet;
+    hoofdgame myXletHG;
     
     public void setCallback (HelloTVXlet xlet)
     {
@@ -11,13 +12,14 @@ public class tmrGame extends TimerTask {
     
     public void run()
     {
-        //System.out.println("tick");
-        if(myXlet != null) { myXlet.callback(); }
-        
+      
+        if(myXlet != null) {   System.out.println("tick"); myXlet.callback(); }
+         
+        if(myXletHG != null) {   System.out.println("tick"); myXletHG.callback(); }     
     }
 
-    void setCallback(hoofdgame aThis) {
-        throw new UnsupportedOperationException("Not yet implemented");
+    public void setCallbackHG(hoofdgame aThis) {
+        myXletHG=aThis;
     }
     
 

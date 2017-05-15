@@ -1,7 +1,7 @@
 Signature-Version: 1.0
 Created-By: 1.6.0_16 (Sun Microsystems Inc.)
 BDJ-Signature-Version: 1.0
-SHA1-Digest-Manifest: UtYm1XlDEB8c6rbf4BR6Kou5o6Y=
+SHA1-Digest-Manifest: UOwOVQD8bqVD+c1VTnN76p366K4=
 
 Name: src/hellotvxlet/scherm.class
 SHA1-Digest: oba6s0YA8Y5ph0SaBK9+2LwFPnY=
@@ -19,7 +19,7 @@ Name: hellotvxlet/Speelveld.class
 SHA1-Digest: IlwpSdvl51nbegXlW48mDbQ6Vd4=
 
 Name: hellotvxlet/HelloTVXlet.class
-SHA1-Digest: j4c4ZIzzlBaQ7tM0RYK3KGXypnc=
+SHA1-Digest: cjgrXMts2E7uB717XG4WezruxvA=
 
 Name: hellotvxlet/Blok.class
 SHA1-Digest: SARo3LoosA0SRi04sCN5OJm2JTw=
@@ -46,7 +46,7 @@ Name: hellotvxlet/boll.class
 SHA1-Digest: 7pmGnDOaXbreYwA6wtrJQ//zBx8=
 
 Name: hellotvxlet/hoofdgame.class
-SHA1-Digest: Yi8qV5bjuw3ynM6BxeJwnwfXuOQ=
+SHA1-Digest: TzisCdSbaPskhk/8vKOQlqQOmqg=
 
 Name: hellotvxlet/Rechthoek.class
 SHA1-Digest: ufmhk1hVrnYhmBsSsyG3kGr+BbE=
@@ -91,5 +91,5 @@ Name: src/hellotvxlet/game.class
 SHA1-Digest: 4tRpEbtk+iz39WGn1yd9J+05SGc=
 
 Name: hellotvxlet/tmrGame.class
-SHA1-Digest: KzKhOw982ROAAJu2QttshFcUGBc=
+SHA1-Digest: G+HIKmoF3WYtUNZo0uQEV4iBLqg=
 

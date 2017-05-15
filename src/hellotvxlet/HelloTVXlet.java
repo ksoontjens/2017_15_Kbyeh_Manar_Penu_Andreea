@@ -6,6 +6,7 @@ import javax.tv.xlet.Xlet;
 import javax.tv.xlet.XletContext;
 import javax.tv.xlet.XletStateChangeException;
 import org.dvb.event.EventManager;
+import org.dvb.event.UserEvent;
 import org.dvb.event.UserEventListener;
 import org.dvb.event.UserEventRepository;
 import org.havi.ui.HContainer;
@@ -19,7 +20,7 @@ import org.havi.ui.event.HActionListener;
 
     
     
-public class HelloTVXlet implements Xlet, HActionListener
+public class HelloTVXlet implements Xlet, HActionListener, UserEventListener
       
 {
  hoofdgame gxlet;
@@ -124,7 +125,7 @@ public class HelloTVXlet implements Xlet, HActionListener
         repository.addKey(org.havi.ui.event.HRcEvent.VK_RIGHT);
         
         //bekend maken bij manager
-        manager.addUserEventListener((UserEventListener) this,repository);
+        manager.addUserEventListener( this,repository);
         
 
     }
@@ -182,6 +183,10 @@ public class HelloTVXlet implements Xlet, HActionListener
             
       }
 
+    }
+
+    public void userEventReceived(UserEvent arg0) {
+      
     }
   
      

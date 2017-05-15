@@ -158,7 +158,7 @@ static HScene scene=null;
         
          t = new Timer();
         tmrGame mtt = new tmrGame();
-        mtt.setCallback(this);
+        mtt.setCallbackHG(this);
         t.scheduleAtFixedRate(mtt,0,timerinterval);
        
         
@@ -226,7 +226,7 @@ static HScene scene=null;
       public void callback()
     {
             
-            
+            System.out.println("callback");
             Paint(); // update picbox even if not updated
     }
     
