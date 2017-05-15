@@ -1,7 +1,7 @@
 Signature-Version: 1.0
 Created-By: 1.6.0_16 (Sun Microsystems Inc.)
 BDJ-Signature-Version: 1.0
-SHA1-Digest-Manifest: rcuO/aI3ZCUHahA+RLParY9M3t4=
+SHA1-Digest-Manifest: 6aFWFpmPOhmnXzueuN3uEeAJScI=
 
 Name: hellotvxlet/HelloTVXlet.class
 SHA1-Digest: bf0G46UNMXfNgwXeaG3MiPsxqeA=
@@ -28,7 +28,7 @@ Name: hellotvxlet/Segement.class
 SHA1-Digest: 4ejonfq+QcTvhVx1R8Da1AzB8YQ=
 
 Name: hellotvxlet/hoofdgame.class
-SHA1-Digest: 6IK1UT8Gq1OjBmxG2JKmahUC/x0=
+SHA1-Digest: fnP45uoqX+BmqUPJGi9xWWKrOHQ=
 
 Name: hellotvxlet/tmrGame.class
 SHA1-Digest: G+HIKmoF3WYtUNZo0uQEV4iBLqg=

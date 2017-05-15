@@ -317,8 +317,23 @@ static HScene scene=null;
             
     
    
+            overlapBol();
             
     }
+      
+      
+      public void overlapBol(){
+          System.out.println("slangX: " + x + " slangY: " + y);
+          System.out.println("bolX: " + bol.x + " bolY: " + bol.y);
+          
+          if (Math.abs(x-bol.x)<20 && Math.abs(y-bol.y)<20) {
+     
+            scene.remove(bol);
+            scene.repaint();
+          }
+          
+          
+      }
     
     public void actionPerformed(ActionEvent e) 
     {
