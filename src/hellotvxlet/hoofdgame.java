@@ -7,10 +7,7 @@ import org.havi.ui.*;
 import org.havi.ui.event.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-<<<<<<< HEAD
 import java.awt.event.KeyEvent;
-=======
->>>>>>> cc71172bd986699dc87dbd9ae6e53a12d63aa859
 import java.util.Timer;
 
 
@@ -19,14 +16,11 @@ public class hoofdgame  implements Xlet, UserEventListener, HActionListener
     
 private HelloTVXlet mainXlet;
 static HScene scene=null; 
-<<<<<<< HEAD
 
     int gedrukt=0;
     private Segement nextSlang;
     private int x,y;
 
-=======
->>>>>>> cc71172bd986699dc87dbd9ae6e53a12d63aa859
     int initx = 0;
     int inity = 140;
     int rows = 24;
@@ -229,7 +223,6 @@ static HScene scene=null;
     }
 
     
-<<<<<<< HEAD
    
         
         public void userEventReceived(org.dvb.event.UserEvent e){
@@ -259,20 +252,11 @@ static HScene scene=null;
         
         
         
-=======
-    public void userEventReceived(UserEvent e) {
-        
-        
-            
-            
-        }
->>>>>>> cc71172bd986699dc87dbd9ae6e53a12d63aa859
       public void callback()
     {
             
             System.out.println("callback");
             Paint(); // update picbox even if not updated
-<<<<<<< HEAD
             
             
             
@@ -301,8 +285,6 @@ static HScene scene=null;
     
             
             
-=======
->>>>>>> cc71172bd986699dc87dbd9ae6e53a12d63aa859
     }
     
     public void actionPerformed(ActionEvent e) 
