@@ -8,6 +8,7 @@ import org.havi.ui.event.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Timer;
 
 
@@ -18,8 +19,8 @@ private HelloTVXlet mainXlet;
 static HScene scene=null; 
 
     int gedrukt=0;
-    private Segement nextSlang;
-    private int x,y;
+    private Slang nextSlang;
+    private int x=350,y=200;
 
     int initx = 0;
     int inity = 140;
@@ -35,13 +36,15 @@ static HScene scene=null;
    
     int intervalat = 500; //ms
     int counttointerval = 0;
-    int timerinterval = 100;
+    int timerinterval = 500;
    
     boolean holdkey = false;
     boolean holdtimer = false;
     
+    
+    ArrayList snake=new ArrayList();
     //classes
-    Segement[] snake;
+//    Segement[] snake;
     Blok[] grid;
     Segement food;
 
@@ -146,12 +149,12 @@ static HScene scene=null;
         }
         
         //init snake
-        snake = new Segement[cols*rows];
+/*        snake = new Segement[cols*rows];
 
         for (int i = 0; i < snakelength; i++)
         {
             snake[i] = new Segement((squaresize+(i*squaresize)) + (cols*squaresize)/2, (rows*squaresize)/2);
-        }
+        }*/
        
         
         //initialize food
@@ -180,13 +183,16 @@ static HScene scene=null;
     public void Paint()
     {
          System.out.println("paint begin");
+         
+         
+
         for (int i = 0; i < grid.length; i++)
             {
                 //put snake on grid
                 boolean showsnake = false;
                 for (int j = 0; j < snakelength; j++)
 		{
-                    if(grid[i].x == snake[j].x && grid[i].y == snake[j].y)
+       //             if(grid[i].x == snake[j].x && grid[i].y == snake[j].y)
                     {
                         showsnake = true;
                     }
@@ -256,9 +262,7 @@ static HScene scene=null;
     {
             
             System.out.println("callback");
-            Paint(); // update picbox even if not updated
-            
-            
+     //       Paint(); // update picbox even if not updated
             
             
               switch(gedrukt){
@@ -279,10 +283,19 @@ static HScene scene=null;
             }
     
                 
-            nextSlang = new Segement(x,y);
+            nextSlang = new Slang(x,y);
             scene.add(nextSlang);
+                if (snake.size()>3)
+    {
+       scene.remove((Slang)snake.get(0));
+       
+                    snake.remove(0); // eerste segmentje
+        
+       
+    }
             scene.repaint();
-    
+            System.out.println("new slang at "+x+","+y);
+    snake.add(nextSlang);
             
             
     }
