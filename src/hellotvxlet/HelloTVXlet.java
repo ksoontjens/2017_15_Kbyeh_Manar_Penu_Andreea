@@ -6,6 +6,7 @@ import javax.tv.xlet.Xlet;
 import javax.tv.xlet.XletContext;
 import javax.tv.xlet.XletStateChangeException;
 import org.dvb.event.EventManager;
+import org.dvb.event.UserEvent;
 import org.dvb.event.UserEventListener;
 import org.dvb.event.UserEventRepository;
 import org.havi.ui.HContainer;
@@ -19,14 +20,14 @@ import org.havi.ui.event.HActionListener;
 
     
     
-public class HelloTVXlet implements Xlet, HActionListener
+public class HelloTVXlet implements Xlet, HActionListener, UserEventListener
       
 {
- game gxlet;
+ hoofdgame gxlet;
  XletContext ctx;
     HContainer menu;
    HScene scene;
-      public Speelveld veld;
+     
 
 
    HTextButton start;
@@ -98,7 +99,7 @@ public class HelloTVXlet implements Xlet, HActionListener
         scene.setVisible(true);
         
         start.requestFocus();
-             tekenSpeelveld();
+            
   
     }
 
@@ -124,7 +125,7 @@ public class HelloTVXlet implements Xlet, HActionListener
         repository.addKey(org.havi.ui.event.HRcEvent.VK_RIGHT);
         
         //bekend maken bij manager
-        manager.addUserEventListener((UserEventListener) this,repository);
+        manager.addUserEventListener( this,repository);
         
 
     }
@@ -167,7 +168,7 @@ public class HelloTVXlet implements Xlet, HActionListener
         
                // start GameXlet
                this.ctx=ctx;
-           gxlet=new game();
+           gxlet=new hoofdgame();
            managergame.getInstance().setApplicationManager(this);
             try {
                 scene.setVisible(false);
@@ -183,10 +184,11 @@ public class HelloTVXlet implements Xlet, HActionListener
       }
 
     }
-         public void tekenSpeelveld(){
-        veld = new Speelveld();
-        scene.add(veld);
+
+    public void userEventReceived(UserEvent arg0) {
+      
     }
+  
      
 
      

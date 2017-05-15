@@ -19,8 +19,8 @@ public class scherm extends HComponent  {
    
     
     public void paint(Graphics g){
-        g.setColor(Color.GRAY);
-        g.drawRect(0, 60, 718,418);
+        g.setColor(Color.WHITE);
+        g.drawRect(0, 140, 717,430);
         
         
         }

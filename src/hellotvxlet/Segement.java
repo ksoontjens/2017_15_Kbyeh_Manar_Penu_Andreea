@@ -1,6 +1,8 @@
 package hellotvxlet;
 
-public class Segement {
+import org.havi.ui.HComponent;
+
+public class Segement extends HComponent {
     public int x = 0;
     public int y = 0;
     
