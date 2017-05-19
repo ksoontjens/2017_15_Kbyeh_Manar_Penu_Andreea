@@ -1,5 +1,7 @@
 package hellotvxlet;
 
+import org.havi.ui.HComponent;
+
 public class Segement {
     public int x = 0;
     public int y = 0;
