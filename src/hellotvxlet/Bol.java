@@ -15,7 +15,7 @@ import org.havi.ui.HComponent;
  */
 public class Bol extends HComponent {
     public int x = 18 * (int) ((Math.random()) * 40); //cols
-    public int y = 18 * (int) ((Math.random()) * 24); //rows
+    public int y  = 150 + 18 * (int) ((Math.random()) * 25); //rows
     
     public Bol(){
         this.setBounds(0, 0, 800, 800);

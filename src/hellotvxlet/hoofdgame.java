@@ -327,7 +327,7 @@ tmrGame mtt;
             
             overlapBol();
             overlapZichzelf();
-           // overlapVeld();
+           overlapVeld();
             
     }
       
@@ -359,9 +359,7 @@ tmrGame mtt;
   if (snake.size()>0)
         for (int i = 0; i < snake.size()-1; i++)
             {
-            System.out.println("snakelength="+snake.size());
-            System.out.println("nakijken of"+((Slang)snake.get(i)).x+" == "+x );
-                      System.out.println("nakijken of"+((Slang)snake.get(i)).y+" == "+y);
+          
                if (((Slang)snake.get(i)).x == x && ((Slang)snake.get(i)).y == y){
                
                     holdtimer=true;
