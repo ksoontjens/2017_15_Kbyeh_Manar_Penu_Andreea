@@ -7,6 +7,8 @@ import org.havi.ui.*;
 import org.havi.ui.event.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Timer;
 
 
@@ -15,27 +17,43 @@ public class hoofdgame  implements Xlet, UserEventListener, HActionListener
     
 private HelloTVXlet mainXlet;
 static HScene scene=null; 
+
+    int gedrukt=0;
+    private Slang nextSlang;
+    private int x=350,y=200;
+    private Bol bol;
+  
+    
+tmrGame mtt;
     int initx = 0;
     int inity = 140;
     int rows = 24;
     int cols = 40;
     int squaresize = 18;
      private scherm speelveld;
-    int initsnakelength = 2;
+    int initsnakelength = 10;
     int snakelength = initsnakelength;
-     HStaticText highscore, score;
+    // HStaticText highscore, score;
+    int score = 0;
+    int highscore = 0;
+    
     int highscoreNumber = 0;
     int direction = 3;
    
     int intervalat = 500; //ms
     int counttointerval = 0;
-    int timerinterval = 100;
+    int timerinterval = 500;
    
     boolean holdkey = false;
     boolean holdtimer = false;
+        private boolean alive = true;
     
+    
+    ArrayList snake=new ArrayList();
     //classes
-    Segement[] snake;
+    
+    Segement[] snakeA;
+    
     Blok[] grid;
     Segement food;
 
@@ -56,6 +74,9 @@ static HScene scene=null;
     DVBColor gridcolor = new DVBColor(new DVBColor(15,45,250,111));
    
     Timer t;
+        private Timer timer;
+    
+    private HStaticText text;
     
     
     
@@ -96,6 +117,10 @@ static HScene scene=null;
  speelveld = new scherm();       
         
            scene.add(speelveld);
+           
+         
+           
+           
           scene.validate();
         scene.setVisible(true);
         //init grid
@@ -119,6 +144,9 @@ static HScene scene=null;
         lblGrid[i].setForeground(new DVBColor(0,0,0,255));
         lblGrid[i].setFont(myfont);        
         scene.add(lblGrid[i]);
+        
+        
+        
         }
         
   
@@ -139,13 +167,7 @@ static HScene scene=null;
                 }
         }
         
-        //init snake
-        snake = new Segement[cols*rows];
 
-        for (int i = 0; i < snakelength; i++)
-        {
-            snake[i] = new Segement((squaresize+(i*squaresize)) + (cols*squaresize)/2, (rows*squaresize)/2);
-        }
        
         
         //initialize food
@@ -157,14 +179,23 @@ static HScene scene=null;
         EventManager.getInstance().addUserEventListener(this, uev);
         
          t = new Timer();
-        tmrGame mtt = new tmrGame();
+         mtt = new tmrGame();
         mtt.setCallbackHG(this);
         t.scheduleAtFixedRate(mtt,0,timerinterval);
        
         
+        
+        tekenBol();
     }
       
     }
+    
+    
+    public void tekenBol(){
+        bol = new Bol();
+        scene.add(bol);
+    }
+    
     public void startXlet() 
     {
        
@@ -174,13 +205,16 @@ static HScene scene=null;
     public void Paint()
     {
          System.out.println("paint begin");
+         
+         
+
         for (int i = 0; i < grid.length; i++)
             {
                 //put snake on grid
                 boolean showsnake = false;
                 for (int j = 0; j < snakelength; j++)
 		{
-                    if(grid[i].x == snake[j].x && grid[i].y == snake[j].y)
+       //             if(grid[i].x == snake[j].x && grid[i].y == snake[j].y)
                     {
                         showsnake = true;
                     }
@@ -217,17 +251,151 @@ static HScene scene=null;
     }
 
     
-    public void userEventReceived(UserEvent e) {
+   
         
-        
+        public void userEventReceived(org.dvb.event.UserEvent e){
+        if(e.getType() == KeyEvent.KEY_PRESSED){
+            switch(e.getCode()){
+            
+                case HRcEvent.VK_UP:
+                    gedrukt = 0;
+                    System.out.println("VK_UP is PRESSED");
+                    break;
+                case HRcEvent.VK_DOWN:
+                    gedrukt = 1;
+                    System.out.println("VK_DOWN is PRESSED");
+                    break;
+                case HRcEvent.VK_LEFT:
+                    gedrukt = 2;
+                    System.out.println("VK_LEFT is PRESSED");
+                    break;
+                case HRcEvent.VK_RIGHT:
+                    gedrukt = 3;
+                    System.out.println("VK_RIGHT is PRESSED");
+                    break;
+            
+            }}}
             
             
-        }
+        
+        
+        
       public void callback()
     {
             
             System.out.println("callback");
-            Paint(); // update picbox even if not updated
+     //       Paint(); // update picbox even if not updated
+            
+            
+              switch(gedrukt){
+                case 3://rechts
+                      x += 20;
+                      break;
+                case 1://onder
+                      y += 20;
+                      break;
+                case 2: //links
+                      x -= 20;
+                      break;
+                case 0: //boven
+                      y -= 20;
+                      break;
+                default:
+                      break;        
+            }
+    
+                
+            nextSlang = new Slang(x,y);
+            scene.add(nextSlang);
+                if (snake.size()>snakelength)
+    {
+       scene.remove((Slang)snake.get(0));
+       
+                    snake.remove(0); // eerste segmentje
+        
+       
+    }
+            
+            
+            
+            scene.repaint();
+            System.out.println("new slang at "+x+","+y);
+            snake.add(nextSlang);
+            
+    
+            
+            
+            overlapBol();
+            overlapZichzelf();
+           // overlapVeld();
+            
+    }
+      
+   
+      public void overlapBol(){
+          System.out.println("slangX: " + x + " slangY: " + y);
+          System.out.println("bolX: " + bol.x + " bolY: " + bol.y);
+          
+          if (Math.abs(x-bol.x)<20 && Math.abs(y-bol.y)<20) {
+     
+            //laat bol verdwijnen
+              scene.remove(bol);
+            //lengte slang vermeerderen
+             snakelength++;
+              
+            //score aanpassen
+            score++;
+            lblPoints.setTextContent("score: " + Integer.toString(score),HVisible.NORMAL_STATE);
+            
+            scene.repaint(); //op random plek verschijnen
+            tekenBol();
+          }
+          
+          
+      }
+      
+      
+      public void overlapZichzelf(){
+  if (snake.size()>0)
+        for (int i = 0; i < snake.size()-1; i++)
+            {
+            System.out.println("snakelength="+snake.size());
+            System.out.println("nakijken of"+((Slang)snake.get(i)).x+" == "+x );
+                      System.out.println("nakijken of"+((Slang)snake.get(i)).y+" == "+y);
+               if (((Slang)snake.get(i)).x == x && ((Slang)snake.get(i)).y == y){
+               
+                    holdtimer=true;
+                     gameOver();
+               }   
+        }
+      }
+      
+      
+      public void overlapVeld(){
+        if (x >= 710 || x <= -10 || y >= 560 || y <= 120){
+        
+            
+           gameOver();
+        }
+      }
+      
+   private void gameOver() {
+        System.out.println("game over");
+   //     timer.cancel();
+        mtt.running=false;
+        
+        text = new HStaticText("GAME OVER! \n (press any arrow key to restart)");
+        
+        text.setLocation(184,100);
+        text.setSize(360,270);
+        text.setBackground(new DVBColor(0,0,0,170));
+        text.setBackgroundMode(HVisible.BACKGROUND_FILL);
+        
+        alive = false;
+        
+        scene.add(text);
+        scene.repaint();
+   
     }
     
     public void actionPerformed(ActionEvent e) 
